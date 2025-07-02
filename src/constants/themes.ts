@@ -13,9 +13,9 @@ export const COLORS = {
 } as const;
 
 export const FONT_SIZES = {
-    sm: 12, // Texto pequeno, como legendas
-    md: 16, // Texto padrão
-    lg: 20, // Títulos ou destaques
-    xl: 24, // Títulos principais
-    xxl: 32, // Destaques grandes
+    sm:12, // Texto pequeno, como legendas
+    md:16, // Texto padrão
+    lg:20, // Títulos ou destaques
+    xl:24, // Títulos principais
+    xxl:32, // Destaques grandes
 } as const;

@@ -3,12 +3,13 @@ import { Keyboard, TextInput, View } from "react-native";
 
 import { styles } from "./styles";
 import { InputProps } from "./props";
+import { COLORS, FONT_SIZES } from "../../constants/themes"; // Importando COLORS
 
 export default function Input({
     iconName,
     iconLib: IconLib,
-    iconSize = 20,
-    iconColor = "#333",
+    iconSize = FONT_SIZES.lg,
+    iconColor = COLORS.textSecondary,
     style,
     ...rest
 }: InputProps) {
@@ -20,13 +21,12 @@ export default function Input({
                     name={iconName as any}
                     size={iconSize}
                     color={iconColor}
-                    style={styles.icon}
                 />
             )}
             <TextInput {...rest}
                 value={text}
                 onChangeText={setText}
-                placeholderTextColor='#999'
+                placeholderTextColor={COLORS.textSecondary}
                 keyboardType="ascii-capable"
                 returnKeyType="done"
                 onSubmitEditing={() => Keyboard.dismiss()}
