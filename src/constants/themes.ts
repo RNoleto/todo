@@ -19,3 +19,52 @@ export const FONT_SIZES = {
     xl:24, // Títulos principais
     xxl:32, // Destaques grandes
 } as const;
+
+export const PADDINGS = {
+    sm:4,
+    md:8,
+    lg:12,
+    xl:16,
+    xxl:20,
+} as const;
+
+export const BORDER_RADIUS = {
+    sm:4,
+    md:8,
+    lg:12,
+    xl:16,
+    xxl:20,
+} as const;
+
+export const SHADOWS = {
+    sm: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 1,
+      },
+      shadowOpacity: 0.22,
+      shadowRadius: 2.22,
+      elevation: 3,
+    },
+    md: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
+    },
+    lg: {
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 4,
+      },
+      shadowOpacity: 0.30,
+      shadowRadius: 4.65,
+      elevation: 8,
+    },
+  } as const; 

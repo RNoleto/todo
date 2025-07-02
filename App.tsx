@@ -7,6 +7,8 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import Button from './src/components/Button';
 import Input from './src/components/Input';
+import Card from './src/components/Card';
+
 import { COLORS } from './src/constants/themes';
 
 export default function App() {
@@ -19,6 +21,8 @@ export default function App() {
           iconName='search'
           placeholder='Buscar...'
         />
+
+        <Card variant='default' />
 
         <Button />
         <StatusBar style="auto" />

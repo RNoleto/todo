@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "../../constants/themes";
+import { BORDER_RADIUS, COLORS, PADDINGS } from "../../constants/themes";
 
 export const styles = StyleSheet.create({
     container:{
@@ -7,9 +7,9 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         gap:4,
         backgroundColor:COLORS.surface,
-        paddingHorizontal:12,
-        paddingVertical:6,
-        borderRadius:6,
+        paddingHorizontal:PADDINGS.lg,
+        paddingVertical:PADDINGS.md,
+        borderRadius:BORDER_RADIUS.md,
         borderWidth:1,
         borderColor:COLORS.border,
     }
