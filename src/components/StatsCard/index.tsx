@@ -1,6 +1,9 @@
 import React from "react";
 import { Text, View } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+
 import Card from '../Card';
+
 import { styles } from "./styles";
 
 export default function StatsCard() {
@@ -13,13 +16,39 @@ export default function StatsCard() {
 
             <View style={styles.statsContainer}>
                 <View style={styles.statsContain}>
-                    <Text>Stack 1</Text>
-                    <Text>Stack 2</Text>
+                    <View style={styles.statItem}>
+                        <Ionicons name="attach" size={24} color="black" />
+                        <View>
+                            <Text>0</Text>
+                            <Text>Concluídos</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.statItem}>
+                        <Ionicons name="attach" size={24} color="black" />
+                        <View>
+                            <Text style={styles.statValue}>0</Text>
+                            <Text style={styles.statLegend}>Atrasados</Text>
+                        </View>
+                    </View>
                 </View>
 
                 <View style={styles.statsContain}>
-                    <Text>Stack 3</Text>
-                    <Text>Stack 4</Text>
+                    <View style={styles.statItem}>
+                        <Ionicons name="attach" size={24} color="black" />
+                        <View>
+                            <Text>0</Text>
+                            <Text>Pendentes</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.statItem}>
+                        <Ionicons name="attach" size={24} color="black" />
+                        <View>
+                            <Text>0</Text>
+                            <Text>Total</Text>
+                        </View>
+                    </View>
                 </View>
             </View>
         </Card>

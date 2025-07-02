@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { FONT_SIZES } from "../../constants/themes";
+import { COLORS, FONT_SIZES } from "../../constants/themes";
 
 export const styles =StyleSheet.create({
     header:{
@@ -15,6 +15,18 @@ export const styles =StyleSheet.create({
         justifyContent:'space-between',
     },
     statsContain:{
-
-    }
+        gap:8,
+    },
+    statItem:{
+        flexDirection:'row',
+        alignItems: 'center',
+    },
+    statValue:{
+        fontSize:FONT_SIZES.xl,
+        fontWeight:'bold',
+    },
+    statLegend:{
+        fontSize:FONT_SIZES.sm,
+        color:COLORS.textSecondary,
+    },
 })
