@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Keyboard, TextInput, View } from "react-native";
 
 import { styles } from "./styles";
@@ -13,7 +13,6 @@ export default function Input({
     style,
     ...rest
 }: InputProps) {
-    const [text, setText] = useState('');
     return (
         <View style={styles.container}>
             {IconLib && iconName && (
@@ -24,8 +23,6 @@ export default function Input({
                 />
             )}
             <TextInput {...rest}
-                value={text}
-                onChangeText={setText}
                 placeholderTextColor={COLORS.textSecondary}
                 keyboardType="ascii-capable"
                 returnKeyType="done"

@@ -1,12 +1,16 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, TouchableOpacityProps } from "react-native";
 
 import { styles } from "./styles";
 
-export default function Button(){
+type ButtonProps = TouchableOpacityProps & {
+    title?: string,
+}
+
+export default function Button({ onPress, title = 'Adicionar', ...rest }: ButtonProps){
     return(
         <View>
-            <TouchableOpacity style={styles.buttonContain}>
-            <Text style={styles.text}>Botão</Text>
+            <TouchableOpacity style={styles.buttonContain} onPress={onPress} {...rest}>
+                <Text style={styles.text}>{title}</Text>
             </TouchableOpacity>
         </View>
     )

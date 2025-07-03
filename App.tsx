@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 import { Feather } from '@expo/vector-icons';
 
@@ -9,33 +9,44 @@ import Button from './src/components/Button';
 import Input from './src/components/Input';
 
 import { COLORS, FONT_SIZES, PADDINGS } from './src/constants/themes';
-import StatsCard from './src/components/StatsCard';
-import Card from './src/components/Card';
+import { useState } from 'react';
 
 export default function App() {
+  const [task, setTask] = useState('');;
+  const [tasks, setTasks] = useState<string[]>([]);
+
+  function handleAddTask(){
+    if(task.trim().length === 0) return;
+    setTasks(prev => [...prev, task]);
+    setTask('');
+  }
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-
-        <Text style={styles.title}>Titulo</Text>
-
-        <StatsCard />
+        <Text style={styles.title}>Todo List</Text>
 
         <Input 
           iconLib={Feather}
-          iconName='search'
-          placeholder='Buscar...'
+          iconName='plus-circle'
+          placeholder='Adicionar tarefa'
+          value={task}
+          onChangeText={setTask}
         />
 
-        <View>
-          <Card>
-            <Text>
-              Corpo da tela
-            </Text>
-          </Card>
-        </View>
+        <FlatList 
+          data={tasks}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item })  => (
+            <View>
+              <Text>{item}</Text>
+            </View>
+          )}
+        />
 
-        <Button />
+        <Button onPress={handleAddTask} />
+
+
         <StatusBar style="auto" />
       </SafeAreaView>
     </SafeAreaProvider>
